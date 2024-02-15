@@ -1,0 +1,16 @@
+DIGEST 59b7967f6d3c768367db3c412cd30290
+FFiche1
+R15:23 untypedLC <> <> lib
+def 37:39 <> App
+R44:44 untypedLC <> :::'\'_x_'..'_x_'·'_x not
+R46:47 untypedLC <> :::'\'_x_'..'_x_'·'_x not
+R45:45 untypedLC <> x constr
+R48:48 untypedLC <> :::'\'_x_'..'_x_'·'_x not
+R50:51 untypedLC <> :::'\'_x_'..'_x_'·'_x not
+R49:49 untypedLC <> y constr
+R52:52 untypedLC <> x constr
+R54:54 untypedLC <> y constr
+def 68:69 <> E3
+R74:76 Fiche1 <> App def
+R78:78 untypedLC <> a constr
+R80:80 untypedLC <> b constr

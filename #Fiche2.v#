@@ -1,0 +1,77 @@
+Require Import untypedLC.
+(*1\ Codage des booléens et de la conditionnelle *)
+
+(*1\*)
+Definition ctr := \x·\y· x.
+Definition cfa := \x·\y· y.
+Definition cif := \b·\m·\n·b m n.
+
+(*2\*)
+Definition ifVrai := cif ctr v f.
+Compute show_cbn ifVrai.
+
+Definition ifFaux := cif cfa v f.
+Compute show_cbn ifFaux.
+
+(*2\ Codage des opérateurs bool´eens*)
+
+(*1\*)
+Definition cand := \a b· \x y ·a (b x y) y. 
+Definition cor := \a·\b·\x·\y·a x (b x y).
+
+(*table de verité cand *)
+Definition vEtv := cand ctr ctr.
+Compute equiv_lexp ctr vEtv.
+
+Definition vEtf := cand ctr cfa.
+Compute equiv_lexp ctr vEtf.
+
+Definition fEtf := cand cfa cfa.
+Compute equiv_lexp ctr fEtf.
+
+Definition fEtv := cand cfa ctr.
+Compute equiv_lexp ctr fEtv.
+
+
+(*table de verité cor *)
+Definition vOuv := cor ctr ctr.
+Compute equiv_lexp ctr vOuv.
+
+Definition vOuf := cor ctr cfa.
+Compute equiv_lexp ctr vOuf.
+
+Definition fOuf := cor cfa cfa.
+Compute equiv_lexp ctr fOuf.
+
+Definition fOuv := cor cfa ctr.
+Compute equiv_lexp ctr fOuv.
+
+(*2\*)
+Definition cnot := \b·\x·\y· b y x.
+
+Definition ifNotVrai := cnot ctr e f.
+Compute show_cbn ifNotVrai.
+
+Definition ifNotFaux := cnot cfa v f.
+Compute show_cbn ifNotFaux.
+
+(*3\ Codage des entiers*)
+
+(*1\*)
+Definition c0 := \f x· x.
+Definition c1 := \f x· f x.
+Definition c2 := \f x· f (f x).
+Definition c3 := \f x· f (f (f x)).
+
+(*2\*)
+Definition csucc := \n ·\f x· f (n f x).
+
+Compute equiv_lexp (csucc c0)  c1.
+Compute equiv_lexp (csucc c1)  c2.
+Compute equiv_lexp (csucc c2)  c3.
+
+(*4\ Opérations sur les entiers*)
+
+(*1\*)
+
+
